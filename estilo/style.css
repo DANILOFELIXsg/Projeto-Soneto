@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap');
+
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Lugrasimo', cursive;
+    --fonte3:'Lumanosimo', cursive;
+}
+
+* {
+    margin: 0px; /*tirar as margens e paddings da pagina*/
+    padding: 0px;
+}
+
+html, body {
+    min-height: 100vh; /*oculpar toda a tela = viewport*/
+    background-color: darkgray;
+    font-family: var(--fonte1);
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header > h1 {
+    padding-top: 50px; /*criar uma espaço em cima do h1*/
+    font-variant: small-caps;/*caso queira deixar todas as letra sem maisculas: text-transform: uppercase;
+    Mas o 'small-caps' toda as letras iniciais em maisculas*/
+    font-family: var(--fonte2);
+    font-size: 4vw; /*para que o tamanho da fonte se adapte a largura da página (view-whidth)*/
+}
+
+header > p {
+    padding-bottom: 50px;
+}
+
+header a, fotter a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+header a:hover, footer a:hover { /*para personalizar o link de maneira mutua*/
+    text-decoration: underline;
+}
+
+section { /*o uso desse será para criar o efeito de paralaxe*/
+    padding-top: 10vh; 
+    padding-bottom: 10vh;
+    line-height: 2em; /*espaçamento entre as linhas do texto*/
+    padding-left: 30px;
+    font-family: var(--fonte3);
+    font-size: 1.9vw; /*para que o tamanho da fonte se adapte a largura da página (view-whidth)*/
+}
+
+section > p {
+    padding-bottom: 2em;
+}
+
+section.normal { /*o ponto é colocado apenas para personalizar a class marcada*/
+    background-color: white;
+    color: black;
+}
+
+section.imagem {
+    background-color: rgb(41, 38, 38);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.473);
+    background-size: cover; /*por usarmos duas imagens dentro do section.imagem, basta usarmos uma no
+    section.imagem (ela vai preencher todo o fundo de maneira organica)*/
+    background-attachment: fixed; /*para fixarmos a imagem no fundo de maneira independente ao texto*/
+}
+
+section.imagem > p { /*para apenas o paragrafo tenha um fundo independente a cor da section imagem*/
+    display: inline-block; /*se adaptar ao bloco*/
+    background-color: rgba(0, 0, 0, 0.514);
+    padding: 5px;
+    text-shadow: 1px 2px 0px black;
+}
+
+section#img01 {  /*# para os ids do html*/
+    background-image: url('../imagens/5b5590d0dbc624f44bd6d707de3c1c27.jpg');
+    background-position: right center;
+}
+
+section#img02 {
+    background-image: url('../imagens/vinicius-de-moraes-le-o-proprio-livro-1381234599717_1024x768.webp');
+}
+
+footer {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
